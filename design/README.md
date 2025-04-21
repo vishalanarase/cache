@@ -23,6 +23,7 @@ type CacheItem[T any] struct {
 	Expiration int64 // UnixNano timestamp
 }
 
+// LRUCache is a thread-safe LRU cache with per-key TTL.
 type LRUCache[T any] struct {
 	capacity     int
 	items        map[string]*list.Element
